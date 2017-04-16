@@ -1,116 +1,116 @@
 <svg height="1806" width="720" xmlns="http://www.w3.org/2000/svg">
 <rect height="1806" fill="#555" width="720"></rect>
 <text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
-<tspan x="10" y="26">  0.  2017-04-16 08:37:18 +0000    55693 bytes  .</tspan>
-<tspan x="10" y="42">  1.  2017-04-16 08:37:18 +0000     1082 bytes  LICENSE</tspan>
-<tspan x="10" y="58">  2.  2017-04-16 08:37:18 +0000     8611 bytes  README.md</tspan>
-<tspan x="10" y="74">  3.  2017-04-16 08:37:18 +0000      312 bytes  gulpfile.js</tspan>
-<tspan x="10" y="90">  4.  2017-04-16 08:37:18 +0000      747 bytes  index.js</tspan>
-<tspan x="10" y="106">  5.  2017-04-16 08:37:18 +0000     4847 bytes  lib/blocksBuilder.js</tspan>
-<tspan x="10" y="122">  6.  2017-04-16 08:37:18 +0000     3718 bytes  lib/htmlBuilder.js</tspan>
-<tspan x="10" y="138">  7.  2017-04-16 08:37:18 +0000      820 bytes  lib/pipeline.js</tspan>
-<tspan x="10" y="154">  8.  2017-04-16 08:37:18 +0000     2768 bytes  package.json</tspan>
-<tspan x="10" y="170">  9.  2017-04-16 08:37:18 +0000       38 bytes  test/expected/app.js</tspan>
-<tspan x="10" y="186"> 10.  2017-04-16 08:37:18 +0000      246 bytes  test/expected/array-js-attributes.html</tspan>
-<tspan x="10" y="202"> 11.  2017-04-16 08:37:18 +0000       11 bytes  test/expected/build-remove-no-trailing-whitespac\</tspan>
+<tspan x="10" y="26">  0.  2017-04-16 08:38:22 +0000    55693 bytes  .</tspan>
+<tspan x="10" y="42">  1.  2017-04-16 08:38:22 +0000     1082 bytes  LICENSE</tspan>
+<tspan x="10" y="58">  2.  2017-04-16 08:38:22 +0000     8611 bytes  README.md</tspan>
+<tspan x="10" y="74">  3.  2017-04-16 08:38:22 +0000      312 bytes  gulpfile.js</tspan>
+<tspan x="10" y="90">  4.  2017-04-16 08:38:22 +0000      747 bytes  index.js</tspan>
+<tspan x="10" y="106">  5.  2017-04-16 08:38:22 +0000     4847 bytes  lib/blocksBuilder.js</tspan>
+<tspan x="10" y="122">  6.  2017-04-16 08:38:22 +0000     3718 bytes  lib/htmlBuilder.js</tspan>
+<tspan x="10" y="138">  7.  2017-04-16 08:38:22 +0000      820 bytes  lib/pipeline.js</tspan>
+<tspan x="10" y="154">  8.  2017-04-16 08:38:22 +0000     2768 bytes  package.json</tspan>
+<tspan x="10" y="170">  9.  2017-04-16 08:38:22 +0000       38 bytes  test/expected/app.js</tspan>
+<tspan x="10" y="186"> 10.  2017-04-16 08:38:22 +0000      246 bytes  test/expected/array-js-attributes.html</tspan>
+<tspan x="10" y="202"> 11.  2017-04-16 08:38:22 +0000       11 bytes  test/expected/build-remove-no-trailing-whitespac\</tspan>
 <tspan x="10" y="218">e.html</tspan>
-<tspan x="10" y="234"> 12.  2017-04-16 08:37:18 +0000       91 bytes  test/expected/complex-path.html</tspan>
-<tspan x="10" y="250"> 13.  2017-04-16 08:37:18 +0000       73 bytes  test/expected/complex.html</tspan>
-<tspan x="10" y="266"> 14.  2017-04-16 08:37:18 +0000      128 bytes  test/expected/conditional-complex.html</tspan>
-<tspan x="10" y="282"> 15.  2017-04-16 08:37:18 +0000       71 bytes  test/expected/conditional-css.html</tspan>
-<tspan x="10" y="298"> 16.  2017-04-16 08:37:18 +0000       99 bytes  test/expected/conditional-inline-css.html</tspan>
-<tspan x="10" y="314"> 17.  2017-04-16 08:37:18 +0000       85 bytes  test/expected/conditional-inline-js.html</tspan>
-<tspan x="10" y="330"> 18.  2017-04-16 08:37:18 +0000       59 bytes  test/expected/conditional-js.html</tspan>
-<tspan x="10" y="346"> 19.  2017-04-16 08:37:18 +0000       38 bytes  test/expected/data/css/min-style.css</tspan>
-<tspan x="10" y="362"> 20.  2017-04-16 08:37:18 +0000       54 bytes  test/expected/data/css/style.css</tspan>
-<tspan x="10" y="378"> 21.  2017-04-16 08:37:18 +0000       38 bytes  test/expected/data/js/app.js</tspan>
-<tspan x="10" y="394"> 22.  2017-04-16 08:37:18 +0000       36 bytes  test/expected/data/js/app_min_concat.js</tspan>
-<tspan x="10" y="410"> 23.  2017-04-16 08:37:18 +0000       35 bytes  test/expected/data/js/min-app.js</tspan>
-<tspan x="10" y="426"> 24.  2017-04-16 08:37:18 +0000       70 bytes  test/expected/glob-inline-css.html</tspan>
-<tspan x="10" y="442"> 25.  2017-04-16 08:37:18 +0000       56 bytes  test/expected/glob-inline-js.html</tspan>
-<tspan x="10" y="458"> 26.  2017-04-16 08:37:18 +0000       89 bytes  test/expected/many-blocks-removal.html</tspan>
-<tspan x="10" y="474"> 27.  2017-04-16 08:37:18 +0000       35 bytes  test/expected/min-app.js</tspan>
-<tspan x="10" y="490"> 28.  2017-04-16 08:37:18 +0000       82 bytes  test/expected/min-complex-path.html</tspan>
-<tspan x="10" y="506"> 29.  2017-04-16 08:37:18 +0000       64 bytes  test/expected/min-complex.html</tspan>
-<tspan x="10" y="522"> 30.  2017-04-16 08:37:18 +0000       50 bytes  test/expected/min-css-with-media-query.html</tspan>
-<tspan x="10" y="538"> 31.  2017-04-16 08:37:18 +0000       42 bytes  test/expected/min-html-simple-css.html</tspan>
-<tspan x="10" y="554"> 32.  2017-04-16 08:37:18 +0000       30 bytes  test/expected/min-html-simple-js.html</tspan>
-<tspan x="10" y="570"> 33.  2017-04-16 08:37:18 +0000        0 bytes  test/expected/min-html-simple-removal.html</tspan>
-<tspan x="10" y="586"> 34.  2017-04-16 08:37:18 +0000       64 bytes  test/expected/min-paths-with-querystring.html</tspan>
-<tspan x="10" y="602"> 35.  2017-04-16 08:37:18 +0000       45 bytes  test/expected/min-simple-css-path.html</tspan>
-<tspan x="10" y="618"> 36.  2017-04-16 08:37:18 +0000       37 bytes  test/expected/min-simple-css.html</tspan>
-<tspan x="10" y="634"> 37.  2017-04-16 08:37:18 +0000       36 bytes  test/expected/min-simple-js-path.html</tspan>
-<tspan x="10" y="650"> 38.  2017-04-16 08:37:18 +0000       28 bytes  test/expected/min-simple-js.html</tspan>
-<tspan x="10" y="666"> 39.  2017-04-16 08:37:18 +0000       38 bytes  test/expected/min-style.css</tspan>
-<tspan x="10" y="682"> 40.  2017-04-16 08:37:18 +0000       39 bytes  test/expected/multiple-alternative-paths.html</tspan>
-<tspan x="10" y="698"> 41.  2017-04-16 08:37:18 +0000      181 bytes  test/expected/multiple-files.html</tspan>
-<tspan x="10" y="714"> 42.  2017-04-16 08:37:18 +0000       73 bytes  test/expected/paths-with-querystring.html</tspan>
-<tspan x="10" y="730"> 43.  2017-04-16 08:37:18 +0000       50 bytes  test/expected/simple-css-path.html</tspan>
-<tspan x="10" y="746"> 44.  2017-04-16 08:37:18 +0000       42 bytes  test/expected/simple-css.html</tspan>
-<tspan x="10" y="762"> 45.  2017-04-16 08:37:18 +0000       70 bytes  test/expected/simple-inline-css.html</tspan>
-<tspan x="10" y="778"> 46.  2017-04-16 08:37:18 +0000       56 bytes  test/expected/simple-inline-js.html</tspan>
-<tspan x="10" y="794"> 47.  2017-04-16 08:37:18 +0000       38 bytes  test/expected/simple-js-path.html</tspan>
-<tspan x="10" y="810"> 48.  2017-04-16 08:37:18 +0000       22 bytes  test/expected/simple-js-removal.html</tspan>
-<tspan x="10" y="826"> 49.  2017-04-16 08:37:18 +0000       30 bytes  test/expected/simple-js.html</tspan>
-<tspan x="10" y="842"> 50.  2017-04-16 08:37:18 +0000       50 bytes  test/expected/single-quotes-css.html</tspan>
-<tspan x="10" y="858"> 51.  2017-04-16 08:37:18 +0000       70 bytes  test/expected/single-quotes-inline-css.html</tspan>
-<tspan x="10" y="874"> 52.  2017-04-16 08:37:18 +0000       56 bytes  test/expected/single-quotes-inline-js.html</tspan>
-<tspan x="10" y="890"> 53.  2017-04-16 08:37:18 +0000       38 bytes  test/expected/single-quotes-js.html</tspan>
-<tspan x="10" y="906"> 54.  2017-04-16 08:37:18 +0000       54 bytes  test/expected/style.css</tspan>
-<tspan x="10" y="922"> 55.  2017-04-16 08:37:18 +0000       20 bytes  test/expected/subfolder/app.js</tspan>
-<tspan x="10" y="938"> 56.  2017-04-16 08:37:18 +0000       30 bytes  test/expected/subfolder/index.html</tspan>
-<tspan x="10" y="954"> 57.  2017-04-16 08:37:18 +0000       10 bytes  test/fixtures/alternative/js/util.js</tspan>
-<tspan x="10" y="970"> 58.  2017-04-16 08:37:18 +0000      342 bytes  test/fixtures/array-js-attributes.html</tspan>
-<tspan x="10" y="986"> 59.  2017-04-16 08:37:18 +0000      143 bytes  test/fixtures/async-less.html</tspan>
-<tspan x="10" y="1002"> 60.  2017-04-16 08:37:18 +0000      347 bytes  test/fixtures/build-remove-no-trailing-whitespac\</tspan>
+<tspan x="10" y="234"> 12.  2017-04-16 08:38:22 +0000       91 bytes  test/expected/complex-path.html</tspan>
+<tspan x="10" y="250"> 13.  2017-04-16 08:38:22 +0000       73 bytes  test/expected/complex.html</tspan>
+<tspan x="10" y="266"> 14.  2017-04-16 08:38:22 +0000      128 bytes  test/expected/conditional-complex.html</tspan>
+<tspan x="10" y="282"> 15.  2017-04-16 08:38:22 +0000       71 bytes  test/expected/conditional-css.html</tspan>
+<tspan x="10" y="298"> 16.  2017-04-16 08:38:22 +0000       99 bytes  test/expected/conditional-inline-css.html</tspan>
+<tspan x="10" y="314"> 17.  2017-04-16 08:38:22 +0000       85 bytes  test/expected/conditional-inline-js.html</tspan>
+<tspan x="10" y="330"> 18.  2017-04-16 08:38:22 +0000       59 bytes  test/expected/conditional-js.html</tspan>
+<tspan x="10" y="346"> 19.  2017-04-16 08:38:22 +0000       38 bytes  test/expected/data/css/min-style.css</tspan>
+<tspan x="10" y="362"> 20.  2017-04-16 08:38:22 +0000       54 bytes  test/expected/data/css/style.css</tspan>
+<tspan x="10" y="378"> 21.  2017-04-16 08:38:22 +0000       38 bytes  test/expected/data/js/app.js</tspan>
+<tspan x="10" y="394"> 22.  2017-04-16 08:38:22 +0000       36 bytes  test/expected/data/js/app_min_concat.js</tspan>
+<tspan x="10" y="410"> 23.  2017-04-16 08:38:22 +0000       35 bytes  test/expected/data/js/min-app.js</tspan>
+<tspan x="10" y="426"> 24.  2017-04-16 08:38:22 +0000       70 bytes  test/expected/glob-inline-css.html</tspan>
+<tspan x="10" y="442"> 25.  2017-04-16 08:38:22 +0000       56 bytes  test/expected/glob-inline-js.html</tspan>
+<tspan x="10" y="458"> 26.  2017-04-16 08:38:22 +0000       89 bytes  test/expected/many-blocks-removal.html</tspan>
+<tspan x="10" y="474"> 27.  2017-04-16 08:38:22 +0000       35 bytes  test/expected/min-app.js</tspan>
+<tspan x="10" y="490"> 28.  2017-04-16 08:38:22 +0000       82 bytes  test/expected/min-complex-path.html</tspan>
+<tspan x="10" y="506"> 29.  2017-04-16 08:38:22 +0000       64 bytes  test/expected/min-complex.html</tspan>
+<tspan x="10" y="522"> 30.  2017-04-16 08:38:22 +0000       50 bytes  test/expected/min-css-with-media-query.html</tspan>
+<tspan x="10" y="538"> 31.  2017-04-16 08:38:22 +0000       42 bytes  test/expected/min-html-simple-css.html</tspan>
+<tspan x="10" y="554"> 32.  2017-04-16 08:38:22 +0000       30 bytes  test/expected/min-html-simple-js.html</tspan>
+<tspan x="10" y="570"> 33.  2017-04-16 08:38:22 +0000        0 bytes  test/expected/min-html-simple-removal.html</tspan>
+<tspan x="10" y="586"> 34.  2017-04-16 08:38:22 +0000       64 bytes  test/expected/min-paths-with-querystring.html</tspan>
+<tspan x="10" y="602"> 35.  2017-04-16 08:38:22 +0000       45 bytes  test/expected/min-simple-css-path.html</tspan>
+<tspan x="10" y="618"> 36.  2017-04-16 08:38:22 +0000       37 bytes  test/expected/min-simple-css.html</tspan>
+<tspan x="10" y="634"> 37.  2017-04-16 08:38:22 +0000       36 bytes  test/expected/min-simple-js-path.html</tspan>
+<tspan x="10" y="650"> 38.  2017-04-16 08:38:22 +0000       28 bytes  test/expected/min-simple-js.html</tspan>
+<tspan x="10" y="666"> 39.  2017-04-16 08:38:22 +0000       38 bytes  test/expected/min-style.css</tspan>
+<tspan x="10" y="682"> 40.  2017-04-16 08:38:22 +0000       39 bytes  test/expected/multiple-alternative-paths.html</tspan>
+<tspan x="10" y="698"> 41.  2017-04-16 08:38:22 +0000      181 bytes  test/expected/multiple-files.html</tspan>
+<tspan x="10" y="714"> 42.  2017-04-16 08:38:22 +0000       73 bytes  test/expected/paths-with-querystring.html</tspan>
+<tspan x="10" y="730"> 43.  2017-04-16 08:38:22 +0000       50 bytes  test/expected/simple-css-path.html</tspan>
+<tspan x="10" y="746"> 44.  2017-04-16 08:38:22 +0000       42 bytes  test/expected/simple-css.html</tspan>
+<tspan x="10" y="762"> 45.  2017-04-16 08:38:22 +0000       70 bytes  test/expected/simple-inline-css.html</tspan>
+<tspan x="10" y="778"> 46.  2017-04-16 08:38:22 +0000       56 bytes  test/expected/simple-inline-js.html</tspan>
+<tspan x="10" y="794"> 47.  2017-04-16 08:38:22 +0000       38 bytes  test/expected/simple-js-path.html</tspan>
+<tspan x="10" y="810"> 48.  2017-04-16 08:38:22 +0000       22 bytes  test/expected/simple-js-removal.html</tspan>
+<tspan x="10" y="826"> 49.  2017-04-16 08:38:22 +0000       30 bytes  test/expected/simple-js.html</tspan>
+<tspan x="10" y="842"> 50.  2017-04-16 08:38:22 +0000       50 bytes  test/expected/single-quotes-css.html</tspan>
+<tspan x="10" y="858"> 51.  2017-04-16 08:38:22 +0000       70 bytes  test/expected/single-quotes-inline-css.html</tspan>
+<tspan x="10" y="874"> 52.  2017-04-16 08:38:22 +0000       56 bytes  test/expected/single-quotes-inline-js.html</tspan>
+<tspan x="10" y="890"> 53.  2017-04-16 08:38:22 +0000       38 bytes  test/expected/single-quotes-js.html</tspan>
+<tspan x="10" y="906"> 54.  2017-04-16 08:38:22 +0000       54 bytes  test/expected/style.css</tspan>
+<tspan x="10" y="922"> 55.  2017-04-16 08:38:22 +0000       20 bytes  test/expected/subfolder/app.js</tspan>
+<tspan x="10" y="938"> 56.  2017-04-16 08:38:22 +0000       30 bytes  test/expected/subfolder/index.html</tspan>
+<tspan x="10" y="954"> 57.  2017-04-16 08:38:22 +0000       10 bytes  test/fixtures/alternative/js/util.js</tspan>
+<tspan x="10" y="970"> 58.  2017-04-16 08:38:22 +0000      342 bytes  test/fixtures/array-js-attributes.html</tspan>
+<tspan x="10" y="986"> 59.  2017-04-16 08:38:22 +0000      143 bytes  test/fixtures/async-less.html</tspan>
+<tspan x="10" y="1002"> 60.  2017-04-16 08:38:22 +0000      347 bytes  test/fixtures/build-remove-no-trailing-whitespac\</tspan>
 <tspan x="10" y="1018">e.html</tspan>
-<tspan x="10" y="1034"> 61.  2017-04-16 08:37:18 +0000       84 bytes  test/fixtures/comment-js.html</tspan>
-<tspan x="10" y="1050"> 62.  2017-04-16 08:37:18 +0000      268 bytes  test/fixtures/complex-path.html</tspan>
-<tspan x="10" y="1066"> 63.  2017-04-16 08:37:18 +0000      250 bytes  test/fixtures/complex.html</tspan>
-<tspan x="10" y="1082"> 64.  2017-04-16 08:37:18 +0000      309 bytes  test/fixtures/conditional-complex.html</tspan>
-<tspan x="10" y="1098"> 65.  2017-04-16 08:37:18 +0000      169 bytes  test/fixtures/conditional-css.html</tspan>
-<tspan x="10" y="1114"> 66.  2017-04-16 08:37:18 +0000      166 bytes  test/fixtures/conditional-inline-css.html</tspan>
-<tspan x="10" y="1130"> 67.  2017-04-16 08:37:18 +0000      142 bytes  test/fixtures/conditional-inline-js.html</tspan>
-<tspan x="10" y="1146"> 68.  2017-04-16 08:37:18 +0000      142 bytes  test/fixtures/conditional-js.html</tspan>
-<tspan x="10" y="1162"> 69.  2017-04-16 08:37:18 +0000      168 bytes  test/fixtures/css-with-media-query-error.html</tspan>
-<tspan x="10" y="1178"> 70.  2017-04-16 08:37:18 +0000      169 bytes  test/fixtures/css-with-media-query.html</tspan>
-<tspan x="10" y="1194"> 71.  2017-04-16 08:37:18 +0000       30 bytes  test/fixtures/css/clear.css</tspan>
-<tspan x="10" y="1210"> 72.  2017-04-16 08:37:18 +0000       23 bytes  test/fixtures/css/main.css</tspan>
-<tspan x="10" y="1226"> 73.  2017-04-16 08:37:18 +0000       90 bytes  test/fixtures/glob-css.html</tspan>
-<tspan x="10" y="1242"> 74.  2017-04-16 08:37:18 +0000       85 bytes  test/fixtures/glob-inline-css.html</tspan>
-<tspan x="10" y="1258"> 75.  2017-04-16 08:37:18 +0000       74 bytes  test/fixtures/glob-inline-js.html</tspan>
-<tspan x="10" y="1274"> 76.  2017-04-16 08:37:18 +0000       75 bytes  test/fixtures/glob-js.html</tspan>
-<tspan x="10" y="1290"> 77.  2017-04-16 08:37:18 +0000       17 bytes  test/fixtures/js/lib.js</tspan>
-<tspan x="10" y="1306"> 78.  2017-04-16 08:37:18 +0000       20 bytes  test/fixtures/js/main.js</tspan>
-<tspan x="10" y="1322"> 79.  2017-04-16 08:37:18 +0000       17 bytes  test/fixtures/js2/lib2.js</tspan>
-<tspan x="10" y="1338"> 80.  2017-04-16 08:37:18 +0000       20 bytes  test/fixtures/js2/main2.js</tspan>
-<tspan x="10" y="1354"> 81.  2017-04-16 08:37:18 +0000       49 bytes  test/fixtures/less/clear.less</tspan>
-<tspan x="10" y="1370"> 82.  2017-04-16 08:37:18 +0000       23 bytes  test/fixtures/less/main.less</tspan>
-<tspan x="10" y="1386"> 83.  2017-04-16 08:37:18 +0000      382 bytes  test/fixtures/many-blocks-removal.html</tspan>
-<tspan x="10" y="1402"> 84.  2017-04-16 08:37:18 +0000      522 bytes  test/fixtures/many-blocks.html</tspan>
-<tspan x="10" y="1418"> 85.  2017-04-16 08:37:18 +0000      135 bytes  test/fixtures/min-html-simple-css.html</tspan>
-<tspan x="10" y="1434"> 86.  2017-04-16 08:37:18 +0000      108 bytes  test/fixtures/min-html-simple-js.html</tspan>
-<tspan x="10" y="1450"> 87.  2017-04-16 08:37:18 +0000      106 bytes  test/fixtures/min-html-simple-removal.html</tspan>
-<tspan x="10" y="1466"> 88.  2017-04-16 08:37:18 +0000      176 bytes  test/fixtures/multiple-alternative-paths-inline.\</tspan>
+<tspan x="10" y="1034"> 61.  2017-04-16 08:38:22 +0000       84 bytes  test/fixtures/comment-js.html</tspan>
+<tspan x="10" y="1050"> 62.  2017-04-16 08:38:22 +0000      268 bytes  test/fixtures/complex-path.html</tspan>
+<tspan x="10" y="1066"> 63.  2017-04-16 08:38:22 +0000      250 bytes  test/fixtures/complex.html</tspan>
+<tspan x="10" y="1082"> 64.  2017-04-16 08:38:22 +0000      309 bytes  test/fixtures/conditional-complex.html</tspan>
+<tspan x="10" y="1098"> 65.  2017-04-16 08:38:22 +0000      169 bytes  test/fixtures/conditional-css.html</tspan>
+<tspan x="10" y="1114"> 66.  2017-04-16 08:38:22 +0000      166 bytes  test/fixtures/conditional-inline-css.html</tspan>
+<tspan x="10" y="1130"> 67.  2017-04-16 08:38:22 +0000      142 bytes  test/fixtures/conditional-inline-js.html</tspan>
+<tspan x="10" y="1146"> 68.  2017-04-16 08:38:22 +0000      142 bytes  test/fixtures/conditional-js.html</tspan>
+<tspan x="10" y="1162"> 69.  2017-04-16 08:38:22 +0000      168 bytes  test/fixtures/css-with-media-query-error.html</tspan>
+<tspan x="10" y="1178"> 70.  2017-04-16 08:38:22 +0000      169 bytes  test/fixtures/css-with-media-query.html</tspan>
+<tspan x="10" y="1194"> 71.  2017-04-16 08:38:22 +0000       30 bytes  test/fixtures/css/clear.css</tspan>
+<tspan x="10" y="1210"> 72.  2017-04-16 08:38:22 +0000       23 bytes  test/fixtures/css/main.css</tspan>
+<tspan x="10" y="1226"> 73.  2017-04-16 08:38:22 +0000       90 bytes  test/fixtures/glob-css.html</tspan>
+<tspan x="10" y="1242"> 74.  2017-04-16 08:38:22 +0000       85 bytes  test/fixtures/glob-inline-css.html</tspan>
+<tspan x="10" y="1258"> 75.  2017-04-16 08:38:22 +0000       74 bytes  test/fixtures/glob-inline-js.html</tspan>
+<tspan x="10" y="1274"> 76.  2017-04-16 08:38:22 +0000       75 bytes  test/fixtures/glob-js.html</tspan>
+<tspan x="10" y="1290"> 77.  2017-04-16 08:38:22 +0000       17 bytes  test/fixtures/js/lib.js</tspan>
+<tspan x="10" y="1306"> 78.  2017-04-16 08:38:22 +0000       20 bytes  test/fixtures/js/main.js</tspan>
+<tspan x="10" y="1322"> 79.  2017-04-16 08:38:22 +0000       17 bytes  test/fixtures/js2/lib2.js</tspan>
+<tspan x="10" y="1338"> 80.  2017-04-16 08:38:22 +0000       20 bytes  test/fixtures/js2/main2.js</tspan>
+<tspan x="10" y="1354"> 81.  2017-04-16 08:38:22 +0000       49 bytes  test/fixtures/less/clear.less</tspan>
+<tspan x="10" y="1370"> 82.  2017-04-16 08:38:22 +0000       23 bytes  test/fixtures/less/main.less</tspan>
+<tspan x="10" y="1386"> 83.  2017-04-16 08:38:22 +0000      382 bytes  test/fixtures/many-blocks-removal.html</tspan>
+<tspan x="10" y="1402"> 84.  2017-04-16 08:38:22 +0000      522 bytes  test/fixtures/many-blocks.html</tspan>
+<tspan x="10" y="1418"> 85.  2017-04-16 08:38:22 +0000      135 bytes  test/fixtures/min-html-simple-css.html</tspan>
+<tspan x="10" y="1434"> 86.  2017-04-16 08:38:22 +0000      108 bytes  test/fixtures/min-html-simple-js.html</tspan>
+<tspan x="10" y="1450"> 87.  2017-04-16 08:38:22 +0000      106 bytes  test/fixtures/min-html-simple-removal.html</tspan>
+<tspan x="10" y="1466"> 88.  2017-04-16 08:38:22 +0000      176 bytes  test/fixtures/multiple-alternative-paths-inline.\</tspan>
 <tspan x="10" y="1482">html</tspan>
-<tspan x="10" y="1498"> 89.  2017-04-16 08:37:18 +0000      185 bytes  test/fixtures/multiple-alternative-paths.html</tspan>
-<tspan x="10" y="1514"> 90.  2017-04-16 08:37:18 +0000      269 bytes  test/fixtures/multiple-files.html</tspan>
-<tspan x="10" y="1530"> 91.  2017-04-16 08:37:18 +0000      266 bytes  test/fixtures/paths-with-querystring.html</tspan>
-<tspan x="10" y="1546"> 92.  2017-04-16 08:37:18 +0000      161 bytes  test/fixtures/simple-css-alternate-path.html</tspan>
-<tspan x="10" y="1562"> 93.  2017-04-16 08:37:18 +0000      144 bytes  test/fixtures/simple-css-path.html</tspan>
-<tspan x="10" y="1578"> 94.  2017-04-16 08:37:18 +0000      138 bytes  test/fixtures/simple-css.html</tspan>
-<tspan x="10" y="1594"> 95.  2017-04-16 08:37:18 +0000      134 bytes  test/fixtures/simple-inline-css.html</tspan>
-<tspan x="10" y="1610"> 96.  2017-04-16 08:37:18 +0000      111 bytes  test/fixtures/simple-inline-js.html</tspan>
-<tspan x="10" y="1626"> 97.  2017-04-16 08:37:18 +0000      135 bytes  test/fixtures/simple-js-alternate-path.html</tspan>
-<tspan x="10" y="1642"> 98.  2017-04-16 08:37:18 +0000      117 bytes  test/fixtures/simple-js-path.html</tspan>
-<tspan x="10" y="1658"> 99.  2017-04-16 08:37:18 +0000      133 bytes  test/fixtures/simple-js-removal.html</tspan>
-<tspan x="10" y="1674">100.  2017-04-16 08:37:18 +0000      111 bytes  test/fixtures/simple-js.html</tspan>
-<tspan x="10" y="1690">101.  2017-04-16 08:37:18 +0000      146 bytes  test/fixtures/single-quotes-css.html</tspan>
-<tspan x="10" y="1706">102.  2017-04-16 08:37:18 +0000      134 bytes  test/fixtures/single-quotes-inline-css.html</tspan>
-<tspan x="10" y="1722">103.  2017-04-16 08:37:18 +0000      111 bytes  test/fixtures/single-quotes-inline-js.html</tspan>
-<tspan x="10" y="1738">104.  2017-04-16 08:37:18 +0000      119 bytes  test/fixtures/single-quotes-js.html</tspan>
-<tspan x="10" y="1754">105.  2017-04-16 08:37:18 +0000       76 bytes  test/fixtures/subfolder/index.html</tspan>
-<tspan x="10" y="1770">106.  2017-04-16 08:37:18 +0000       20 bytes  test/fixtures/subfolder/script.js</tspan>
-<tspan x="10" y="1786">107.  2017-04-16 08:37:18 +0000    22830 bytes  test/main.js</tspan>
+<tspan x="10" y="1498"> 89.  2017-04-16 08:38:22 +0000      185 bytes  test/fixtures/multiple-alternative-paths.html</tspan>
+<tspan x="10" y="1514"> 90.  2017-04-16 08:38:22 +0000      269 bytes  test/fixtures/multiple-files.html</tspan>
+<tspan x="10" y="1530"> 91.  2017-04-16 08:38:22 +0000      266 bytes  test/fixtures/paths-with-querystring.html</tspan>
+<tspan x="10" y="1546"> 92.  2017-04-16 08:38:22 +0000      161 bytes  test/fixtures/simple-css-alternate-path.html</tspan>
+<tspan x="10" y="1562"> 93.  2017-04-16 08:38:22 +0000      144 bytes  test/fixtures/simple-css-path.html</tspan>
+<tspan x="10" y="1578"> 94.  2017-04-16 08:38:22 +0000      138 bytes  test/fixtures/simple-css.html</tspan>
+<tspan x="10" y="1594"> 95.  2017-04-16 08:38:22 +0000      134 bytes  test/fixtures/simple-inline-css.html</tspan>
+<tspan x="10" y="1610"> 96.  2017-04-16 08:38:22 +0000      111 bytes  test/fixtures/simple-inline-js.html</tspan>
+<tspan x="10" y="1626"> 97.  2017-04-16 08:38:22 +0000      135 bytes  test/fixtures/simple-js-alternate-path.html</tspan>
+<tspan x="10" y="1642"> 98.  2017-04-16 08:38:22 +0000      117 bytes  test/fixtures/simple-js-path.html</tspan>
+<tspan x="10" y="1658"> 99.  2017-04-16 08:38:22 +0000      133 bytes  test/fixtures/simple-js-removal.html</tspan>
+<tspan x="10" y="1674">100.  2017-04-16 08:38:22 +0000      111 bytes  test/fixtures/simple-js.html</tspan>
+<tspan x="10" y="1690">101.  2017-04-16 08:38:22 +0000      146 bytes  test/fixtures/single-quotes-css.html</tspan>
+<tspan x="10" y="1706">102.  2017-04-16 08:38:22 +0000      134 bytes  test/fixtures/single-quotes-inline-css.html</tspan>
+<tspan x="10" y="1722">103.  2017-04-16 08:38:22 +0000      111 bytes  test/fixtures/single-quotes-inline-js.html</tspan>
+<tspan x="10" y="1738">104.  2017-04-16 08:38:22 +0000      119 bytes  test/fixtures/single-quotes-js.html</tspan>
+<tspan x="10" y="1754">105.  2017-04-16 08:38:22 +0000       76 bytes  test/fixtures/subfolder/index.html</tspan>
+<tspan x="10" y="1770">106.  2017-04-16 08:38:22 +0000       20 bytes  test/fixtures/subfolder/script.js</tspan>
+<tspan x="10" y="1786">107.  2017-04-16 08:38:22 +0000    22830 bytes  test/main.js</tspan>
 </text>
 </svg>
