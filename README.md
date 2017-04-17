@@ -3,6 +3,8 @@
 
 [![NPM](https://nodei.co/npm/gulp-usemin.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/gulp-usemin)
 
+- [https://npmdoc.github.io/node-npmdoc-gulp-usemin/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-gulp-usemin/build/apidoc.html)
+
 [![apidoc](https://npmdoc.github.io/node-npmdoc-gulp-usemin/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-gulp-usemin/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-gulp-usemin/build/screenCapture.npmPackageListing.svg)
@@ -75,63 +77,6 @@
     },
     "version": "0.3.28"
 }
-```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module gulp-usemin](#apidoc.module.gulp-usemin)
-1.  [function <span class="apidocSignatureSpan"></span>gulp-usemin (options)](#apidoc.element.gulp-usemin.gulp-usemin)
-1.  [function <span class="apidocSignatureSpan">gulp-usemin.</span>toString ()](#apidoc.element.gulp-usemin.toString)
-
-
-
-# <a name="apidoc.module.gulp-usemin"></a>[module gulp-usemin](#apidoc.module.gulp-usemin)
-
-#### <a name="apidoc.element.gulp-usemin.gulp-usemin"></a>[function <span class="apidocSignatureSpan"></span>gulp-usemin (options)](#apidoc.element.gulp-usemin.gulp-usemin)
-- description and source-code
-```javascript
-gulp-usemin = function (options) {
-  var through = require('through2');
-  var gutil = require('gulp-util');
-  var blocksBuilder = require('./lib/blocksBuilder.js');
-  var htmlBuilder = require('./lib/htmlBuilder.js');
-
-  return through.obj(function(file, enc, callback) {
-    if (file.isStream()) {
-      this.emit('error', new gutil.PluginError('gulp-usemin', 'Streams are not supported!'));
-      callback();
-    }
-    else if (file.isNull())
-      callback(null, file); // Do nothing if no contents
-    else {
-      try {
-        var blocks = blocksBuilder(file, options);
-        htmlBuilder(file, blocks, options, this.push.bind(this), callback);
-      } catch(e) {
-        this.emit('error', e);
-        callback();
-      }
-    }
-  });
-}
-```
-- example usage
-```shell
-n/a
-```
-
-#### <a name="apidoc.element.gulp-usemin.toString"></a>[function <span class="apidocSignatureSpan">gulp-usemin.</span>toString ()](#apidoc.element.gulp-usemin.toString)
-- description and source-code
-```javascript
-toString = function () {
-    return toString;
-}
-```
-- example usage
-```shell
-n/a
 ```
 
 
