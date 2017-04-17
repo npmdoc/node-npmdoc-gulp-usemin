@@ -65,7 +65,86 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-usemin.blocksBuilder">
+            function <span class="apidocSignatureSpan">gulp-usemin.</span>blocksBuilder
+            <span class="apidocSignatureSpan">(file, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-usemin.htmlBuilder">
+            function <span class="apidocSignatureSpan">gulp-usemin.</span>htmlBuilder
+            <span class="apidocSignatureSpan">(file, blocks, options, push, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-usemin.pipeline">
+            function <span class="apidocSignatureSpan">gulp-usemin.</span>pipeline
+            <span class="apidocSignatureSpan">(name, files, tasks, push)</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <a class="apidocElementLiA" href="#apidoc.element.gulp-usemin.toString">
+            function <span class="apidocSignatureSpan">gulp-usemin.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-usemin.blocksBuilder">module gulp-usemin.blocksBuilder</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-usemin.blocksBuilder.blocksBuilder">
+            function <span class="apidocSignatureSpan">gulp-usemin.</span>blocksBuilder
+            <span class="apidocSignatureSpan">(file, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-usemin.htmlBuilder">module gulp-usemin.htmlBuilder</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-usemin.htmlBuilder.htmlBuilder">
+            function <span class="apidocSignatureSpan">gulp-usemin.</span>htmlBuilder
+            <span class="apidocSignatureSpan">(file, blocks, options, push, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-usemin.pipeline">module gulp-usemin.pipeline</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-usemin.pipeline.pipeline">
+            function <span class="apidocSignatureSpan">gulp-usemin.</span>pipeline
+            <span class="apidocSignatureSpan">(name, files, tasks, push)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-usemin.toString">module gulp-usemin.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-usemin.toString.toString">
             function <span class="apidocSignatureSpan">gulp-usemin.</span>toString
             <span class="apidocSignatureSpan">()</span>
             </a>
@@ -117,6 +196,299 @@
 
 
     <h2>
+        <a href="#apidoc.element.gulp-usemin.blocksBuilder" id="apidoc.element.gulp-usemin.blocksBuilder">
+        function <span class="apidocSignatureSpan">gulp-usemin.</span>blocksBuilder
+        <span class="apidocSignatureSpan">(file, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">blocksBuilder = function (file, options) {
+  options = options || {};
+
+  var startReg = /&lt;!--\s*build:(\w+)(?:(?:\(([^\)]+?)\))?\s+(\/?([^\s]+?))?)?\s*--&gt;/gim;
+  var endReg = /&lt;!--\s*endbuild\s*--&gt;/gim;
+  var jsReg = /&lt;\s*script\s+.*?src\s*=\s*['"]?([^'"?# ]+).*?&gt;&lt;\s*\/\s*script\s*&gt;/gi;
+  var cssReg = /&lt;\s*link\s+.*?href\s*=\s*['"]?([^'"?# ]+).*?&gt;/gi;
+  var cssMediaReg = /&lt;\s*link\s+.*?media\s*=\s*['"]?([^'"]+).*?&gt;/gi;
+  var startCondReg = /&lt;!--\[[^\]]+\]&gt;/gim;
+  var endCondReg = /&lt;!\[endif\]--&gt;/gim;
+
+  var basePath = file.base;
+  var mainPath = path.dirname(file.path);
+  var outputPath = options.outputRelativePath || '';
+  var content = String(file.contents);
+  var sections = content.split(endReg);
+  var blocks = [];
+  var cssMediaQuery = null;
+
+  function getFiles(content, reg, alternatePath) {
+    var paths = [];
+    var files = [];
+    cssMediaQuery = null;
+
+    content
+      .replace(startCondReg, '')
+      .replace(endCondReg, '')
+      .replace(/&lt;!--(?:(?:.|\r|\n)*?)--&gt;/gim, function (a) {
+        return options.enableHtmlComment ? a : '';
+      })
+      .replace(reg, function (a, b) {
+        var filePath = path.resolve(path.join(
+          alternatePath || options.path || mainPath,
+          b.replace(/^'|^"/, '').replace(/'$/, '').replace(/"$/, '')
+        ));
+
+        if (options.assetsDir)
+          filePath = path.resolve(path.join(options.assetsDir, path.relative(basePath, filePath)));
+
+        paths.push(filePath);
+      });
+
+    if (reg === cssReg) {
+      content.replace(cssMediaReg, function(a, media) {
+        media = media.replace(/^'|^"/, '').replace(/'$/, '').replace(/"$/, '');
+
+        if (!cssMediaQuery) {
+          cssMediaQuery = media;
+        } else {
+          if (cssMediaQuery != media)
+            throw new gutil.PluginError('gulp-usemin', 'incompatible css media query for ' + a + ' detected.');
+        }
+      });
+    }
+
+    for (var i = 0, l = paths.length; i &lt; l; ++i) {
+      var filepaths = glob.sync(paths[i]);
+      if(filepaths[0] === undefined &amp;&amp; !options.skipMissingResources) {
+        throw new gutil.PluginError('gulp-usemin', 'Path ' + paths[i] + ' not found!');
+      } else {
+        filepaths.forEach(function (filepath) {
+          files.push(new gutil.File({
+            path: filepath,
+            contents: fs.readFileSync(filepath)
+          }));
+        });
+      }
+    }
+
+    return files;
+  }
+
+  for (var i = 0, l = sections.length; i &lt; l; ++i) {
+    if (sections[i].match(startReg)) {
+      var section = sections[i].split(startReg);
+      blocks.push(section[0]);
+
+      var startCondLine = section[5].match(startCondReg);
+      var endCondLine = section[5].match(endCondReg);
+      if (startCondLine &amp;&amp; endCondLine)
+        blocks.push(startCondLine[0]);
+
+      if (section[1] !== 'remove') {
+        if(section[1] === 'htmlimport'){
+          blocks.push({
+            type: 'htmlimport',
+            nameInHTML: section[3],
+            name: path.join(outputPath || path.relative(basePath, mainPath), section[4]),
+            files: getFiles(section[5], cssReg, section[2]),
+            tasks: options[section[1]]
+          });
+
+        }else if (jsReg.test(section[5])) {
+          if (section[1].indexOf('inline') !== -1) {
+            blocks.push({
+              type: 'inlinejs',
+              files: getFiles(section[5], jsReg, section[2]),
+              tasks: options[section[1]]
+            });
+          }
+          else {
+            blocks.push({
+              type: 'js',
+              nameInHTML: section[3],
+              name: path.join(outputPath || path.relative(basePath, mainPath), section[4]),
+              files: getFiles(section[5], jsReg, section[2]),
+              tasks: options[section[1]]
+            });
+          }
+
+        }
+        else {
+          if (section[1].indexOf('inline') !== -1) {
+            blocks.push({
+              type: 'inlinecss',
+              files: getFiles(section[5], cssReg, section[2]),
+              tasks: options[section[1]], ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-usemin.htmlBuilder" id="apidoc.element.gulp-usemin.htmlBuilder">
+        function <span class="apidocSignatureSpan">gulp-usemin.</span>htmlBuilder
+        <span class="apidocSignatureSpan">(file, blocks, options, push, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">htmlBuilder = function (file, blocks, options, push, callback) {
+  var path = require('path');
+  var gutil = require('gulp-util');
+  var pipeline = require('./pipeline.js');
+
+  var basePath = file.base;
+  var name = path.basename(file.path);
+  var mainPath = path.dirname(file.path);
+
+  function createFile(name, content) {
+    var filePath = path.join(path.relative(basePath, mainPath), name);
+    return new gutil.File({
+      path: filePath,
+      contents: new Buffer(content)
+    })
+  }
+
+  function createHTMLAttributes(attributes, index){
+    if(!attributes){
+      return '';
+    }
+    var attrArray = [];
+    Object.keys(attributes).forEach(function (attribute) {
+
+      var attributeValue = attributes[attribute];
+
+      if (attributeValue === true) {
+        attrArray.push(attribute);
+        return;
+      }
+      if (attributeValue === false) {
+        return;
+      }
+
+      if (Array.isArray(attributeValue)) {
+        attrArray.push(attribute + '="' + attributeValue[index] + '"');
+      } else {
+        attrArray.push(attribute + '="' + attributeValue + '"');
+      }
+
+    });
+    return ' ' + attrArray.join(' ');
+  }
+
+  var html = [];
+  var jsCounter = 0;
+  var cssCounter = 0;
+  var promises = blocks.map(function(block, i) {
+    return new Promise(function(resolve) {
+      html[i] = '';
+      if (typeof block == 'string') {
+        html[i] = block;
+        resolve();
+      }
+      else if (block.files.length == 0){
+        resolve();
+      }
+      else if (block.type == 'js') {
+        pipeline(block.name, block.files, block.tasks, function(name, file) {
+          push(file);
+          var jsAttributes = options ? options.jsAttributes : null;
+          if (path.extname(file.path) == '.js')
+            html[i] += '&lt;script src="' + name.replace(path.basename(name), path.basename(file.path)) +  '"' + createHTMLAttributes
+(jsAttributes, jsCounter++) +'&gt;&lt;/script&gt;';
+          resolve();
+        }.bind(this, block.nameInHTML));
+      }
+      else if (block.type == 'css') {
+        pipeline(block.name, block.files, block.tasks, function(name, file) {
+          push(file);
+          var cssAttributes = options ? options.cssAttributes : null;
+          if (path.extname(file.path) == '.css') {
+            html[i] += '&lt;link rel="stylesheet" href="' + name.replace(path.basename(name), path.basename(file.path))
+              + '"' + (block.mediaQuery ? ' media="' + block.mediaQuery + '"' : '')
+              + createHTMLAttributes(cssAttributes, cssCounter++) +'/&gt;';
+          }
+          resolve();
+        }.bind(this, block.nameInHTML));
+      }
+      else if (block.type == 'inlinejs') {
+        pipeline(block.name, block.files, block.tasks, function(file) {
+          html[i] = '&lt;script&gt;' + String(file.contents) + '&lt;/script&gt;';
+          resolve();
+        }.bind(this));
+      }
+      else if (block.type == 'inlinecss') {
+        pipeline(block.name, block.files, block.tasks, function(file) {
+          html[i] = '&lt;style' + (block.mediaQuery ? ' media="' + block.mediaQuery + '"' : '') + '&gt;'
+            + String(file.contents) + '&lt;/style&gt;';
+          resolve();
+        }.bind(this));
+      }
+      else if (block.type == 'htmlimport') {
+        pipeline(block.name, block.files, block.tasks, function(name, file) {
+          push(file);
+          html[i] += '&lt;link rel="import" href="' + name.replace(path.basename(name), path.basename(file.path)) + '"/&gt;';
+          resolve();
+        }.bind(this, block.nameInHTML));
+      }
+    });
+  });
+
+  Promise.all(promises).then(function() {
+    var createdFile = createFile(name, html.join(''));
+    pipeline(createdFile.path, [createdFile], options &amp;&amp; options['html'], function(file) {
+      callback(null, file);
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-usemin.pipeline" id="apidoc.element.gulp-usemin.pipeline">
+        function <span class="apidocSignatureSpan">gulp-usemin.</span>pipeline
+        <span class="apidocSignatureSpan">(name, files, tasks, push)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pipeline = function (name, files, tasks, push) {
+  var through = require('through2');
+  var concat = require('gulp-concat')(name || 'filename.temp', {newLine: '\n'});
+
+<span class="apidocCodeCommentSpan">  /* PREPARE TASKS */
+</span>  tasks = (tasks || []).slice();
+
+  var concatIndex = tasks.indexOf('concat');
+  if (concatIndex == -1)
+    tasks.unshift(concat);
+  else
+    tasks[concatIndex] = concat;
+
+  tasks.push(through.obj(function(file, enc, streamCallback) {
+    streamCallback(null, file);
+    push(file);
+  }));
+
+  /* PREPARE TASKS END */
+
+  var stream = through.obj(function(file, enc, streamCallback) {
+    streamCallback(null, file);
+  });
+  var newStream = stream;
+  tasks.forEach(function(task) {
+    newStream = newStream.pipe(typeof(task) == 'function' ? task(): task);
+  });
+
+  files.forEach(stream.write.bind(stream));
+  stream.end();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
         <a href="#apidoc.element.gulp-usemin.toString" id="apidoc.element.gulp-usemin.toString">
         function <span class="apidocSignatureSpan">gulp-usemin.</span>toString
         <span class="apidocSignatureSpan">()</span>
@@ -124,8 +496,334 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">toString = function () {
-    return toString;
+    return text;
 }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gulp-usemin.blocksBuilder" id="apidoc.module.gulp-usemin.blocksBuilder">module gulp-usemin.blocksBuilder</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-usemin.blocksBuilder.blocksBuilder" id="apidoc.element.gulp-usemin.blocksBuilder.blocksBuilder">
+        function <span class="apidocSignatureSpan">gulp-usemin.</span>blocksBuilder
+        <span class="apidocSignatureSpan">(file, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">blocksBuilder = function (file, options) {
+  options = options || {};
+
+  var startReg = /&lt;!--\s*build:(\w+)(?:(?:\(([^\)]+?)\))?\s+(\/?([^\s]+?))?)?\s*--&gt;/gim;
+  var endReg = /&lt;!--\s*endbuild\s*--&gt;/gim;
+  var jsReg = /&lt;\s*script\s+.*?src\s*=\s*['"]?([^'"?# ]+).*?&gt;&lt;\s*\/\s*script\s*&gt;/gi;
+  var cssReg = /&lt;\s*link\s+.*?href\s*=\s*['"]?([^'"?# ]+).*?&gt;/gi;
+  var cssMediaReg = /&lt;\s*link\s+.*?media\s*=\s*['"]?([^'"]+).*?&gt;/gi;
+  var startCondReg = /&lt;!--\[[^\]]+\]&gt;/gim;
+  var endCondReg = /&lt;!\[endif\]--&gt;/gim;
+
+  var basePath = file.base;
+  var mainPath = path.dirname(file.path);
+  var outputPath = options.outputRelativePath || '';
+  var content = String(file.contents);
+  var sections = content.split(endReg);
+  var blocks = [];
+  var cssMediaQuery = null;
+
+  function getFiles(content, reg, alternatePath) {
+    var paths = [];
+    var files = [];
+    cssMediaQuery = null;
+
+    content
+      .replace(startCondReg, '')
+      .replace(endCondReg, '')
+      .replace(/&lt;!--(?:(?:.|\r|\n)*?)--&gt;/gim, function (a) {
+        return options.enableHtmlComment ? a : '';
+      })
+      .replace(reg, function (a, b) {
+        var filePath = path.resolve(path.join(
+          alternatePath || options.path || mainPath,
+          b.replace(/^'|^"/, '').replace(/'$/, '').replace(/"$/, '')
+        ));
+
+        if (options.assetsDir)
+          filePath = path.resolve(path.join(options.assetsDir, path.relative(basePath, filePath)));
+
+        paths.push(filePath);
+      });
+
+    if (reg === cssReg) {
+      content.replace(cssMediaReg, function(a, media) {
+        media = media.replace(/^'|^"/, '').replace(/'$/, '').replace(/"$/, '');
+
+        if (!cssMediaQuery) {
+          cssMediaQuery = media;
+        } else {
+          if (cssMediaQuery != media)
+            throw new gutil.PluginError('gulp-usemin', 'incompatible css media query for ' + a + ' detected.');
+        }
+      });
+    }
+
+    for (var i = 0, l = paths.length; i &lt; l; ++i) {
+      var filepaths = glob.sync(paths[i]);
+      if(filepaths[0] === undefined &amp;&amp; !options.skipMissingResources) {
+        throw new gutil.PluginError('gulp-usemin', 'Path ' + paths[i] + ' not found!');
+      } else {
+        filepaths.forEach(function (filepath) {
+          files.push(new gutil.File({
+            path: filepath,
+            contents: fs.readFileSync(filepath)
+          }));
+        });
+      }
+    }
+
+    return files;
+  }
+
+  for (var i = 0, l = sections.length; i &lt; l; ++i) {
+    if (sections[i].match(startReg)) {
+      var section = sections[i].split(startReg);
+      blocks.push(section[0]);
+
+      var startCondLine = section[5].match(startCondReg);
+      var endCondLine = section[5].match(endCondReg);
+      if (startCondLine &amp;&amp; endCondLine)
+        blocks.push(startCondLine[0]);
+
+      if (section[1] !== 'remove') {
+        if(section[1] === 'htmlimport'){
+          blocks.push({
+            type: 'htmlimport',
+            nameInHTML: section[3],
+            name: path.join(outputPath || path.relative(basePath, mainPath), section[4]),
+            files: getFiles(section[5], cssReg, section[2]),
+            tasks: options[section[1]]
+          });
+
+        }else if (jsReg.test(section[5])) {
+          if (section[1].indexOf('inline') !== -1) {
+            blocks.push({
+              type: 'inlinejs',
+              files: getFiles(section[5], jsReg, section[2]),
+              tasks: options[section[1]]
+            });
+          }
+          else {
+            blocks.push({
+              type: 'js',
+              nameInHTML: section[3],
+              name: path.join(outputPath || path.relative(basePath, mainPath), section[4]),
+              files: getFiles(section[5], jsReg, section[2]),
+              tasks: options[section[1]]
+            });
+          }
+
+        }
+        else {
+          if (section[1].indexOf('inline') !== -1) {
+            blocks.push({
+              type: 'inlinecss',
+              files: getFiles(section[5], cssReg, section[2]),
+              tasks: options[section[1]], ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gulp-usemin.htmlBuilder" id="apidoc.module.gulp-usemin.htmlBuilder">module gulp-usemin.htmlBuilder</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-usemin.htmlBuilder.htmlBuilder" id="apidoc.element.gulp-usemin.htmlBuilder.htmlBuilder">
+        function <span class="apidocSignatureSpan">gulp-usemin.</span>htmlBuilder
+        <span class="apidocSignatureSpan">(file, blocks, options, push, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">htmlBuilder = function (file, blocks, options, push, callback) {
+  var path = require('path');
+  var gutil = require('gulp-util');
+  var pipeline = require('./pipeline.js');
+
+  var basePath = file.base;
+  var name = path.basename(file.path);
+  var mainPath = path.dirname(file.path);
+
+  function createFile(name, content) {
+    var filePath = path.join(path.relative(basePath, mainPath), name);
+    return new gutil.File({
+      path: filePath,
+      contents: new Buffer(content)
+    })
+  }
+
+  function createHTMLAttributes(attributes, index){
+    if(!attributes){
+      return '';
+    }
+    var attrArray = [];
+    Object.keys(attributes).forEach(function (attribute) {
+
+      var attributeValue = attributes[attribute];
+
+      if (attributeValue === true) {
+        attrArray.push(attribute);
+        return;
+      }
+      if (attributeValue === false) {
+        return;
+      }
+
+      if (Array.isArray(attributeValue)) {
+        attrArray.push(attribute + '="' + attributeValue[index] + '"');
+      } else {
+        attrArray.push(attribute + '="' + attributeValue + '"');
+      }
+
+    });
+    return ' ' + attrArray.join(' ');
+  }
+
+  var html = [];
+  var jsCounter = 0;
+  var cssCounter = 0;
+  var promises = blocks.map(function(block, i) {
+    return new Promise(function(resolve) {
+      html[i] = '';
+      if (typeof block == 'string') {
+        html[i] = block;
+        resolve();
+      }
+      else if (block.files.length == 0){
+        resolve();
+      }
+      else if (block.type == 'js') {
+        pipeline(block.name, block.files, block.tasks, function(name, file) {
+          push(file);
+          var jsAttributes = options ? options.jsAttributes : null;
+          if (path.extname(file.path) == '.js')
+            html[i] += '&lt;script src="' + name.replace(path.basename(name), path.basename(file.path)) +  '"' + createHTMLAttributes
+(jsAttributes, jsCounter++) +'&gt;&lt;/script&gt;';
+          resolve();
+        }.bind(this, block.nameInHTML));
+      }
+      else if (block.type == 'css') {
+        pipeline(block.name, block.files, block.tasks, function(name, file) {
+          push(file);
+          var cssAttributes = options ? options.cssAttributes : null;
+          if (path.extname(file.path) == '.css') {
+            html[i] += '&lt;link rel="stylesheet" href="' + name.replace(path.basename(name), path.basename(file.path))
+              + '"' + (block.mediaQuery ? ' media="' + block.mediaQuery + '"' : '')
+              + createHTMLAttributes(cssAttributes, cssCounter++) +'/&gt;';
+          }
+          resolve();
+        }.bind(this, block.nameInHTML));
+      }
+      else if (block.type == 'inlinejs') {
+        pipeline(block.name, block.files, block.tasks, function(file) {
+          html[i] = '&lt;script&gt;' + String(file.contents) + '&lt;/script&gt;';
+          resolve();
+        }.bind(this));
+      }
+      else if (block.type == 'inlinecss') {
+        pipeline(block.name, block.files, block.tasks, function(file) {
+          html[i] = '&lt;style' + (block.mediaQuery ? ' media="' + block.mediaQuery + '"' : '') + '&gt;'
+            + String(file.contents) + '&lt;/style&gt;';
+          resolve();
+        }.bind(this));
+      }
+      else if (block.type == 'htmlimport') {
+        pipeline(block.name, block.files, block.tasks, function(name, file) {
+          push(file);
+          html[i] += '&lt;link rel="import" href="' + name.replace(path.basename(name), path.basename(file.path)) + '"/&gt;';
+          resolve();
+        }.bind(this, block.nameInHTML));
+      }
+    });
+  });
+
+  Promise.all(promises).then(function() {
+    var createdFile = createFile(name, html.join(''));
+    pipeline(createdFile.path, [createdFile], options &amp;&amp; options['html'], function(file) {
+      callback(null, file);
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gulp-usemin.pipeline" id="apidoc.module.gulp-usemin.pipeline">module gulp-usemin.pipeline</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-usemin.pipeline.pipeline" id="apidoc.element.gulp-usemin.pipeline.pipeline">
+        function <span class="apidocSignatureSpan">gulp-usemin.</span>pipeline
+        <span class="apidocSignatureSpan">(name, files, tasks, push)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pipeline = function (name, files, tasks, push) {
+  var through = require('through2');
+  var concat = require('gulp-concat')(name || 'filename.temp', {newLine: '\n'});
+
+<span class="apidocCodeCommentSpan">  /* PREPARE TASKS */
+</span>  tasks = (tasks || []).slice();
+
+  var concatIndex = tasks.indexOf('concat');
+  if (concatIndex == -1)
+    tasks.unshift(concat);
+  else
+    tasks[concatIndex] = concat;
+
+  tasks.push(through.obj(function(file, enc, streamCallback) {
+    streamCallback(null, file);
+    push(file);
+  }));
+
+  /* PREPARE TASKS END */
+
+  var stream = through.obj(function(file, enc, streamCallback) {
+    streamCallback(null, file);
+  });
+  var newStream = stream;
+  tasks.forEach(function(task) {
+    newStream = newStream.pipe(typeof(task) == 'function' ? task(): task);
+  });
+
+  files.forEach(stream.write.bind(stream));
+  stream.end();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gulp-usemin.toString" id="apidoc.module.gulp-usemin.toString">module gulp-usemin.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-usemin.toString.toString" id="apidoc.element.gulp-usemin.toString.toString">
+        function <span class="apidocSignatureSpan">gulp-usemin.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
