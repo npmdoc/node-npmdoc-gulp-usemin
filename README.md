@@ -1,4 +1,7 @@
-# api documentation for  [gulp-usemin (v0.3.28)](https://github.com/zont/gulp-usemin#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-gulp-usemin.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-gulp-usemin) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-gulp-usemin.svg)](https://travis-ci.org/npmdoc/node-npmdoc-gulp-usemin)
+# npmdoc-gulp-usemin
+
+#### basic api documentation for  [gulp-usemin (v0.3.28)](https://github.com/zont/gulp-usemin#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-gulp-usemin.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-gulp-usemin) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-gulp-usemin.svg)](https://travis-ci.org/npmdoc/node-npmdoc-gulp-usemin)
+
 #### Replaces references to non-optimized scripts or stylesheets into a set of HTML files (or any templates/views).
 
 [![NPM](https://nodei.co/npm/gulp-usemin.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/gulp-usemin)
@@ -75,7 +78,8 @@
     "scripts": {
         "test": "gulp"
     },
-    "version": "0.3.28"
+    "version": "0.3.28",
+    "bin": {}
 }
 ```
 
